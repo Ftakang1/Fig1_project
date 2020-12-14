@@ -5,7 +5,6 @@ provider "aws" {
     access_key = "my-access-key"
     secret_key = "my-secret-key"
 }
-
 # Create a VPC
 resource "aws_vpc" "vpc1" {
     cidr_block = "10.0.0.0/16"
@@ -13,7 +12,6 @@ resource "aws_vpc" "vpc1" {
     Name = "dev-vpc1"
   }
 }
-
 # Create Securicty Groups
 resource "aws_security_group" "devsg" {
  name        = "dev-sg"
@@ -32,7 +30,6 @@ egress {
    cidr_blocks     = ["0.0.0.0/0"]
  }
 }
-
 # Create a subnet
 resource "aws_subnet" "subnet1" {
   vpc_id     = aws_vpc.vpc1.id
@@ -41,7 +38,6 @@ resource "aws_subnet" "subnet1" {
     Name = "dev-subnet1"
   }
 }
-
 # Create two Ec2 Instances
 resource "aws_instance" "EC2-instance" {
   ami           = "ami-0e625dfca3e5a33bd"
@@ -52,7 +48,6 @@ resource "aws_instance" "EC2-instance" {
     Name = "Ubuntu-Instance-1"
   }
 }
-
 # Create a RDS (Mysql) database
 resource "aws_db_instance" "rds-database" {
   allocated_storage    = 20
@@ -74,7 +69,6 @@ resource "aws_db_instance" "rds-database" {
     Name = "MySqlDB"
   }
 }
-
 /*
 # Provisioning an Internal-facing Load Balancer
 resource "aws_lb" "lb" {
@@ -90,7 +84,6 @@ resource "aws_lb" "lb" {
   }
 }
 */
-
 # Provisioning IGW
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.vpc1.id
