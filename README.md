@@ -1,6 +1,5 @@
 # Figure1_project
-This is a terraform template to provision infrastructure in aws cloud.
-Created the following resources:
+A terraform script to provision the following infrastructure in aws cloud:
  - a vpc
  - security group
 - a subnet
