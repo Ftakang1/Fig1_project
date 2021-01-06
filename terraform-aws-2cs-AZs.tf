@@ -81,3 +81,4 @@ resource "aws_instance" "my-ec2-instance" {
     Project = "my terraform project"
   }
 }
+#source: https://stackoverflow.com/questions/63007610/terraform-aws-how-to-dynamically-assign-availability-zones-to-number-of-instan
